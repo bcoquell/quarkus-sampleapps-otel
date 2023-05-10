@@ -1,0 +1,30 @@
+Hi,
+
+Please find two sample apps in two compressed files :
+apm-imperative.zip
+Sampleapp quarkus (classical imperative libs)
+
+apm-reactive.zip
+Sampleapp quarkus (reactive libs)
+
+Unzip apm-imperative.zip
+Unzip apm-reactive.zip
+
+Launch app -> 
+In apm-reactive\quarkus-app or apm-imperative\quarkus-app
+java -jar quarkus-run.jar
+
+Application is listening on port 8080.
+API /v1/profileData (simple 200 OK)
+
+curl http://localhost:8080/v1/profileData/
+
+Please see PDF to find our screenshots / observations (open telemetry agent 1.25 -> elastic apm)
+
+The main difference is that transaction.name and transaction.name.text are "GET /" in reactive and "GET /v1/profileData" in imperative version
+url.* fields have same values
+
+Is the transation.name set by otel agent ?
+
+Thanks for your help.
+
